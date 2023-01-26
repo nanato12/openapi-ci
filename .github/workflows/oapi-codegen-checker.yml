@@ -1,16 +1,7 @@
-name: linter
+name: gen-checker
 
 on:
   pull_request:
-    paths:
-      - reference/**
-  push:
-    branches:
-      - main
-      - develop
-      - stg
-    paths:
-      - reference/**
 
 jobs:
   oapi-codegen-checker:
