@@ -3,20 +3,18 @@ name: linter
 on:
   pull_request:
     paths:
-      - back/**
+      - reference/**
   push:
     branches:
       - main
       - develop
       - stg
     paths:
-      - back/**
+      - reference/**
 
 jobs:
-  go_generate:
+  oapi-codegen-checker:
     runs-on: ubuntu-latest
-
-    name: oapi-codegen-checker
 
     steps:
       - uses: actions/checkout@v2
