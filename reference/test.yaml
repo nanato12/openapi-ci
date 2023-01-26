@@ -187,3 +187,11 @@ components:
         - lastName
         - email
         - emailVerified
+    Hoge:
+      title: Hoge
+      x-stoplight:
+        id: nx4qxsr6o9rj1
+      type: object
+      properties:
+        id:
+          type: string
