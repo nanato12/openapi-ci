@@ -1,0 +1,34 @@
+name: linter
+
+on:
+  pull_request:
+    paths:
+      - back/**
+  push:
+    branches:
+      - main
+      - develop
+      - stg
+    paths:
+      - back/**
+
+jobs:
+  go_generate:
+    runs-on: ubuntu-latest
+
+    name: oapi-codegen-checker
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{github.head_ref}}
+
+      - uses: actions/setup-go@v2
+        with:
+          go-version: "^1.18"
+
+      - name: set up
+        run: install_oapi_codegen
+
+      - name: codegen check
+        run: sh scripts/oapi-codegen-checker.sh
